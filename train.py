@@ -6,8 +6,8 @@ import torch.optim as optim
 import numpy as np
 import torchvision
 from torchvision import datasets, models, transforms
-import matplotlib.pyplot as plt
 import time
+import sys
 import os
 import copy
 import json
@@ -186,8 +186,8 @@ def initialize_model(model_name, num_classes, feature_extract, use_pretrained=Tr
         input_size = 299
 
     else:
-        model_ft = torch.load(model_name)
-        input_size = 224
+        print("Unrecognised model")
+        sys.exit()
     
     return model_ft, input_size
 
