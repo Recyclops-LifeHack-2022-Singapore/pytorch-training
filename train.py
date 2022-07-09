@@ -203,7 +203,7 @@ def save_model(model_ft, model_name, out_dir):
         os.mkdir(out_dir)
 
     save_path = os.path.join(out_dir, "{}_{}.model".format(model_name, datetime.now().strftime("%Y%m%d_%H%M%S")))
-    torch.save(model_ft, save_path)
+    torch.save(model_ft.to('cpu'), save_path)
 
 if __name__ == '__main__':
     # Initialize the model for this run
